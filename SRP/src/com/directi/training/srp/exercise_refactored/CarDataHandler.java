@@ -1,16 +1,16 @@
-package com.directi.training.srp.exercise;
+package com.directi.training.srp.exercise_refactored;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class CarDatabase {
-    private static final List<Car> _carsDb = Arrays.asList(
+public class CarDataHandler {
+    private List<Car> _carsDb = Arrays.asList(
         new Car("1", "Golf III", "Volkswagen"),
         new Car("2", "Multipla", "Fiat"),
         new Car("3", "Megane", "Renault")
     );
 
-    public static Car getCarById(String carId) {
+    public Car getCarById(String carId) {
         for (Car car : _carsDb) {
             if (car.getId().equals(carId)) {
                 return car;
@@ -19,11 +19,11 @@ public class CarDatabase {
         return null;
     }
 
-    public static List<Car> getAllCars() {
+    public List<Car> getAllCars() {
         return _carsDb;
     }
 
-    public static Car getBestCar() {
+    public Car getBestCar() {
         Car bestCar = null;
         for (Car car : _carsDb) {
             if (bestCar == null || car.getModel().compareTo(bestCar.getModel()) > 0) {
