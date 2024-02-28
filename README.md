@@ -2,6 +2,8 @@
 
 This repository contains examples demonstrating the application of various software design principles. Each principle is applied to a specific problem domain to illustrate its usage.
 
+**Note**: Before and after refactoring code are provided. Class diagrams illustrating the structure are also available.
+
 ## Principles and Examples
 
 ### Open/Closed Principle (OCP)
