@@ -1,4 +1,4 @@
-package com.directi.training.isp.exercise;
+package com.directi.training.isp.exercise_refactored;
 
 public interface Door
 {
@@ -9,8 +9,4 @@ public interface Door
     void open();
 
     void close();
-
-    void timeOutCallback();
-
-    void proximityCallback();
 }
