@@ -1,0 +1,36 @@
+@startuml
+
+package "com.directi.training.ocp.example_refactored" {
+    interface ResourceAllocator {
+        + allocate(): int
+        + free(resourceId: int): void
+    }
+}
+
+package "com.directi.training.ocp.exercise" {
+    enum ResourceType {
+        TIME_SLOT
+        SPACE_SLOT
+    }
+
+    class SpaceSlotAllocator {
+        + allocate(): int
+        + free(resourceId: int): void
+        - markSpaceSlotFree(resourceId: int): void
+        - markSpaceSlotBusy(resourceId: int): void
+        - findFreeSpaceSlot(): int
+    }
+
+    class TimeSlotAllocator {
+        + allocate(): int
+        + free(resourceId: int): void
+        - markTimeSlotFree(resourceId: int): void
+        - markTimeSlotBusy(resourceId: int): void
+        - findFreeTimeSlot(): int
+    }
+}
+
+ResourceAllocator <|-- SpaceSlotAllocator
+ResourceAllocator <|-- TimeSlotAllocator
+
+@enduml
