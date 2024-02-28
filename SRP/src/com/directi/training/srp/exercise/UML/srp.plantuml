@@ -1,0 +1,24 @@
+@startuml
+
+package "com.directi.training.srp.exercise" {
+    class Car {
+        - final String _id
+        - final String _model
+        - final String _brand
+        + Car(id: String, model: String, brand: String)
+        + getId(): String
+        + getModel(): String
+        + getBrand(): String
+    }
+
+    class CarManager {
+        - List<Car> _carsDb
+        + getFromDb(final carId: String): Car
+        + getCarsNames(): String
+        + getBestCar(): Car
+    }
+}
+
+CarManager "1" --> "1..*" Car : contains
+
+@enduml
