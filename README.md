@@ -30,7 +30,3 @@ This repository contains examples demonstrating the application of various softw
 
 - **Exercise**: `com.directi.training.dip.exercise_refactored`
 - **Description**: The example showcases the Dependency Inversion Principle by decoupling high-level and low-level modules and introducing an abstraction layer to facilitate loose coupling and flexibility.
-
-## Usage
-
-To run the examples, compile the Java files and execute the respective main classes.
