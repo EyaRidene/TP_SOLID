@@ -18,14 +18,11 @@ public class EncodingModule {
     }
 
     public void encodeWithFiles() throws IOException {
-        // Encoding logic from files
     }
 
     public void encodeBasedOnNetworkAndDatabase() throws IOException {
-        // Encoding logic based on network and database
-        String encodedString = ""; // Encoding logic
+        String encodedString = ""; 
 
-        // Write encodedString to database
         database.write(encodedString);
     }
 }

@@ -18,9 +18,7 @@ package "com.directi.training.lsp.exercise_refactored" {
         + quack(): void
         + swim(): void
     }
-}
 
-package "com.directi.training.lsp.exercise" {
     class Pool {
         + run(): void
         - quack(ducks: Duck...): void
