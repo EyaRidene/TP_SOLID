@@ -2,7 +2,7 @@ package com.directi.training.isp.exercise_refactored;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-public class SensingDoor implements Door, IProximityCallback
+public class SensingDoor implements ILockable,IOpenable, IProximityCallback
 {
     private boolean _locked;
     private boolean _opened;

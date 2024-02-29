@@ -2,7 +2,7 @@ package com.directi.training.isp.exercise_refactored;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-public class TimedDoor implements Door, ITimedCallback
+public class TimedDoor implements ILockable,IOpenable, ITimedCallback
 {
     private static final int TIME_OUT = 100;
     private boolean _locked;

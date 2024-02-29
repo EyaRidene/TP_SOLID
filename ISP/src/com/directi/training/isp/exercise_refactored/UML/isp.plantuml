@@ -1,56 +1,57 @@
 @startuml
-
-package "com.directi.training.isp.exercise" {
-    interface Door {
-        + lock(): void
-        + unlock(): void
-        + open(): void
-        + close(): void
-    }
-
-    interface IProximityCallback {
-        + proximityCallback(): void
-    }
-
-    interface ITimedCallback {
-        + timeOutCallback(): void
-    }
-
-    class SensingDoor {
-        - _locked: boolean
-        - _opened: boolean
-        + SensingDoor(sensor: Sensor)
-        + lock(): void
-        + unlock(): void
-        + open(): void
-        + close(): void
-        + proximityCallback(): void
-    }
-
-    class Sensor {
-        + register(door: Door): void
-        - isPersonClose(): boolean
-    }
-
-    class TimedDoor {
-        - _locked: boolean
-        - _opened: boolean
-        + TimedDoor(timer: Timer)
-        + lock(): void
-        + unlock(): void
-        + open(): void
-        + close(): void
-        + timeOutCallback(): void
-    }
-
-    class Timer {
-        + register(timeOut: long, door: Door): void
-    }
+interface ILockable {
+    +lock(): void
+    +unlock(): void
 }
 
-Door <|.. SensingDoor
-Door <|.. TimedDoor
+interface IOpenable {
+    +open(): void
+    +close(): void
+}
+
+interface IProximityCallback {
+    +proximityCallback(): void
+}
+
+interface ITimedCallback {
+    +timeOutCallback(): void
+}
+
+class SensingDoor {
+    -_locked: boolean
+    -_opened: boolean
+    +SensingDoor(sensor: Sensor)
+    +lock(): void
+    +unlock(): void
+    +open(): void
+    +close(): void
+    +proximityCallback(): void
+}
+
+class TimedDoor {
+    -_locked: boolean
+    -_opened: boolean
+    +TimedDoor(timer: Timer)
+    +lock(): void
+    +unlock(): void
+    +open(): void
+    +close(): void
+    +timeOutCallback(): void
+}
+
+class Sensor {
+    +register(door: Door): void
+    -isPersonClose(): boolean
+}
+
+class Timer {
+    +register(timeOut: long, door: Door): void
+}
+
+ILockable <|.. SensingDoor
+IOpenable <|.. SensingDoor
 IProximityCallback <|.. SensingDoor
 ITimedCallback <|.. TimedDoor
-
+IOpenable <|.. TimedDoor
+ILockable <|.. TimedDoor
 @enduml

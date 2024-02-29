@@ -1,12 +1,6 @@
 package com.directi.training.isp.exercise_refactored;
 
-public interface Door
-{
+public interface ILockable {
     void lock();
-
     void unlock();
-
-    void open();
-
-    void close();
 }

@@ -12,7 +12,6 @@ package "com.directi.training.srp.exercise" {
     }
 
     class CarManager {
-        - List<Car> _carsDb
         + getFromDb(final carId: String): Car
         + getCarsNames(): String
         + getBestCar(): Car
