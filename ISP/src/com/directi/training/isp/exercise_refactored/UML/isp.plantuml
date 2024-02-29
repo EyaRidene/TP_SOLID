@@ -40,12 +40,12 @@ class TimedDoor {
 }
 
 class Sensor {
-    +register(door: Door): void
+    +register(IProximityCallback callback): void
     -isPersonClose(): boolean
 }
 
 class Timer {
-    +register(timeOut: long, door: Door): void
+    +register(timeOut: long, ITimedCallback callback): void
 }
 
 ILockable <|.. SensingDoor
