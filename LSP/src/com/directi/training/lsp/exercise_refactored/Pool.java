@@ -1,25 +1,25 @@
-package com.directi.training.lsp.exercise;
+package com.directi.training.lsp.exercise_refactored;
 
 public class Pool
 {
     public void run()
     {
-        Duck donaldDuck = new Duck();
-        Duck electricDuck = new ElectronicDuck();
+        IDuck donaldDuck = new Duck();
+        IDuck electricDuck = new ElectronicDuck();
         quack(donaldDuck, electricDuck);
         swim(donaldDuck, electricDuck);
     }
 
-    private void quack(Duck... ducks)
+    private void quack(IDuck... ducks)
     {
-        for (Duck duck : ducks) {
+        for (IDuck duck : ducks) {
             duck.quack();
         }
     }
 
-    private void swim(Duck... ducks)
+    private void swim(IDuck... ducks)
     {
-        for (Duck duck : ducks) {
+        for (IDuck duck : ducks) {
             duck.swim();
         }
     }
