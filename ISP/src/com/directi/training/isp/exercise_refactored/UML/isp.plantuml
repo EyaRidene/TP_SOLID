@@ -54,4 +54,6 @@ IProximityCallback <|.. SensingDoor
 ITimedCallback <|.. TimedDoor
 IOpenable <|.. TimedDoor
 ILockable <|.. TimedDoor
+Timer "uses"<.. TimedDoor
+Sensor "uses" <.. SensingDoor
 @enduml
