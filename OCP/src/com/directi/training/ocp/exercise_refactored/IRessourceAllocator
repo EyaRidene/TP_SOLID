@@ -1,6 +1,6 @@
 package com.directi.training.ocp.example_refactored;
 
-public interface ResourceAllocator {
+public interface IResourceAllocator {
     private static final int INVALID_RESOURCE_ID = -1;
     int allocate();
     void free(int resourceId);
